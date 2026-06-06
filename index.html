@@ -5,27 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Young House Barbershop | Târgu Jiu – Frizerie Premium</title>
     <meta name="description" content="Young House Barbershop – frizeria premium din Târgu Jiu. Servicii profesionale de barbering, tunsori moderne și experiențe de grooming de top. Str. Victoriei 50.">
-    <meta name="keywords" content="barbershop, frizerie, Târgu Jiu, Young House, tunsori, barber, grooming">
+    <meta name="keywords" content="barbershop, frizerie, Târgu Jiu, Young House, tunsori, barber, grooming, skin fade">
     <meta name="author" content="Young House Barbershop">
     <meta property="og:title" content="Young House Barbershop | Târgu Jiu">
     <meta property="og:description" content="Frizerie premium în Târgu Jiu. Tunsori moderne, atmosferă unică.">
     <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Particle Canvas -->
     <canvas id="particle-canvas"></canvas>
-
-    <!-- Glow Orbs Background -->
-    <div class="glow-orbs">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-        <div class="orb orb-4"></div>
-    </div>
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
@@ -55,11 +47,12 @@
             <ul class="nav-links" id="nav-links">
                 <li><a href="#hero" class="nav-link active">Acasă</a></li>
                 <li><a href="#about" class="nav-link">Despre Noi</a></li>
+                <li><a href="#barbers" class="nav-link">Echipa</a></li>
                 <li><a href="#services" class="nav-link">Servicii</a></li>
                 <li><a href="#gallery" class="nav-link">Galerie</a></li>
                 <li><a href="#testimonials" class="nav-link">Recenzii</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li><a href="#contact" class="nav-link nav-cta">Programare</a></li>
+                <li><a href="https://bookr.ro/ro/b/young-house-barbershop" target="_blank" rel="noopener" class="nav-link nav-cta">Programare</a></li>
             </ul>
         </div>
     </nav>
@@ -78,11 +71,11 @@
             </h1>
             <p class="hero-subtitle">Unde stilul întâlnește arta — experiența premium de barbering din inima Târgu Jiului</p>
             <div class="hero-actions">
-                <a href="#contact" class="btn btn-primary">
-                    <span>Programează-te</span>
+                <a href="https://bookr.ro/ro/b/young-house-barbershop" target="_blank" rel="noopener" class="btn btn-primary" id="hero-book-btn">
+                    <span>Programează-te Acum</span>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
-                <a href="#services" class="btn btn-outline">Descoperă Serviciile</a>
+                <a href="#barbers" class="btn btn-outline" id="hero-services-btn">Descoperă Echipa</a>
             </div>
             <div class="hero-stats">
                 <div class="stat">
@@ -96,8 +89,8 @@
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat">
-                    <span class="stat-number" data-count="5">0</span>
-                    <span class="stat-label">Ani Experiență</span>
+                    <span class="stat-number" data-count="4">0</span>
+                    <span class="stat-label">Frizeri Profesioniști</span>
                 </div>
             </div>
         </div>
@@ -120,8 +113,8 @@
                     <div class="card-icon">
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
                     </div>
-                    <h3>Experiență</h3>
-                    <p>Ani de pasiune și dedicare în arta barbierului. Fiecare tuns reflectă priceperea noastră.</p>
+                    <h3>Program Flexibil</h3>
+                    <p>Deschiși zilnic 10:00 – 21:00, inclusiv în weekend. Programează-te oricând.</p>
                 </div>
                 <div class="about-card glass-card">
                     <div class="card-icon">
@@ -148,68 +141,355 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="section services" id="services">
+    <!-- Barbers / Team Section -->
+    <section class="section barbers" id="barbers">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Servicii</span>
-                <h2 class="section-title">Ce îți <span class="text-gradient">oferim</span></h2>
-                <p class="section-desc">De la tunsori clasice la tratamente complete — avem tot ce ai nevoie.</p>
+                <span class="section-tag">Echipa</span>
+                <h2 class="section-title">Frizerii <span class="text-gradient">noștri</span></h2>
+                <p class="section-desc">Fiecare frizer are stilul și prețurile lui. Alege-l pe cel care ți se potrivește.</p>
             </div>
-            <div class="services-grid">
-                <div class="service-card glass-card" data-aos="fade-up">
-                    <div class="service-number">01</div>
-                    <div class="service-icon">✂️</div>
-                    <h3>Tuns Clasic</h3>
-                    <p>Tunsoare profesională adaptată stilului tău, cu consultanță personalizată.</p>
-                    <div class="service-price">
-                        <span class="price">de la 40 lei</span>
+
+            <!-- Barber Tabs -->
+            <div class="barber-tabs" id="barber-tabs">
+                <button class="barber-tab active" data-barber="rares" id="tab-rares">Blidaru Rareș</button>
+                <button class="barber-tab" data-barber="mario" id="tab-mario">Mario Filip</button>
+                <button class="barber-tab" data-barber="razvan" id="tab-razvan">Manolache Răzvan</button>
+                <button class="barber-tab" data-barber="cipri" id="tab-cipri">Cipri</button>
+            </div>
+
+            <!-- Barber Panels -->
+            <div class="barber-panels">
+                <!-- Blidaru Rares -->
+                <div class="barber-panel active" id="panel-rares" data-barber="rares">
+                    <div class="barber-info-header">
+                        <div class="barber-avatar">BR</div>
+                        <div>
+                            <h3 class="barber-name">Blidaru Rareș</h3>
+                            <span class="barber-role">Master Barber</span>
+                        </div>
+                    </div>
+                    <div class="services-price-grid">
+                        <div class="price-card glass-card">
+                            <div class="price-card-header">
+                                <h4>Tuns Barba</h4>
+                                <span class="price-duration">15 min</span>
+                            </div>
+                            <div class="price-tag">35 <span>lei</span></div>
+                        </div>
+                        <div class="price-card glass-card featured-price">
+                            <div class="price-badge">Best Deal</div>
+                            <div class="price-card-header">
+                                <h4>Best Deal</h4>
+                                <span class="price-duration">45 min</span>
+                            </div>
+                            <p class="price-desc">Tuns + Tuns Barbă + Hairstyling</p>
+                            <div class="price-tag">80 <span>lei</span></div>
+                        </div>
+                        <div class="price-card glass-card">
+                            <div class="price-card-header">
+                                <h4>Tuns Skin Fade</h4>
+                                <span class="price-duration">30 min</span>
+                            </div>
+                            <div class="price-tag">65 <span>lei</span></div>
+                        </div>
+                        <div class="price-card glass-card premium-price">
+                            <div class="price-badge">Premium</div>
+                            <div class="price-card-header">
+                                <h4>Ultimate Experience</h4>
+                                <span class="price-duration">Complet</span>
+                            </div>
+                            <p class="price-desc">Toate variantele suplimentare pe lângă tuns skin fade</p>
+                            <div class="price-tag">95 <span>lei</span></div>
+                        </div>
+                        <div class="price-card glass-card">
+                            <div class="price-card-header">
+                                <h4>Full Head Shave</h4>
+                                <span class="price-duration">30 min</span>
+                            </div>
+                            <div class="price-tag">55 <span>lei</span></div>
+                        </div>
+                        <div class="price-card glass-card">
+                            <div class="price-card-header">
+                                <h4>Tuns Copil</h4>
+                                <span class="price-duration">45 min</span>
+                            </div>
+                            <div class="price-tag">60 <span>lei</span></div>
+                        </div>
+                        <div class="price-card glass-card">
+                            <div class="price-card-header">
+                                <h4>Masaj Capilar</h4>
+                                <span class="price-duration">10 min</span>
+                            </div>
+                            <div class="price-tag">25 <span>lei</span></div>
+                        </div>
+                        <div class="price-card glass-card">
+                            <div class="price-card-header">
+                                <h4>Spălat pe Cap</h4>
+                                <span class="price-duration">10 min</span>
+                            </div>
+                            <div class="price-tag">10 <span>lei</span></div>
+                        </div>
+                    </div>
+                    <a href="https://bookr.ro/ro/b/young-house-barbershop" target="_blank" rel="noopener" class="btn btn-primary barber-book-btn" id="book-rares">
+                        <span>Programează la Rareș</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+
+                <!-- Mario Filip -->
+                <div class="barber-panel" id="panel-mario" data-barber="mario">
+                    <div class="barber-info-header">
+                        <div class="barber-avatar">MF</div>
+                        <div>
+                            <h3 class="barber-name">Mario Filip</h3>
+                            <span class="barber-role">Senior Barber</span>
+                        </div>
+                    </div>
+                    <div class="services-price-grid">
+                        <div class="price-card glass-card">
+                            <div class="price-card-header">
+                                <h4>Tuns Barba</h4>
+                                <span class="price-duration">15 min</span>
+                            </div>
+                            <div class="price-tag">40 <span>lei</span></div>
+                        </div>
+                        <div class="price-card glass-card featured-price">
+                            <div class="price-badge">Best Deal</div>
+                            <div class="price-card-header">
+                                <h4>Best Deal</h4>
+                                <span class="price-duration">45 min</span>
+                            </div>
+                            <p class="price-desc">Tuns + Tuns Barbă + Hairstyling</p>
+                            <div class="price-tag">80 <span>lei</span></div>
+                        </div>
+                        <div class="price-card glass-card">
+                            <div class="price-card-header">
+                                <h4>Tuns Skin Fade</h4>
+                                <span class="price-duration">30 min</span>
+                            </div>
+                            <div class="price-tag">65 <span>lei</span></div>
+                        </div>
+                        <div class="price-card glass-card premium-price">
+                            <div class="price-badge">Premium</div>
+                            <div class="price-card-header">
+                                <h4>Ultimate Experience</h4>
+                                <span class="price-duration">Complet</span>
+                            </div>
+                            <p class="price-desc">Toate variantele suplimentare pe lângă tuns skin fade</p>
+                            <div class="price-tag">100 <span>lei</span></div>
+                        </div>
+                        <div class="price-card glass-card">
+                            <div class="price-card-header">
+                                <h4>Full Head Shave</h4>
+                                <span class="price-duration">30 min</span>
+                            </div>
+                            <div class="price-tag">60 <span>lei</span></div>
+                        </div>
+                        <div class="price-card glass-card">
+                            <div class="price-card-header">
+                                <h4>Tuns Copil</h4>
+                                <span class="price-duration">45 min</span>
+                            </div>
+                            <div class="price-tag">60 <span>lei</span></div>
+                        </div>
+                        <div class="price-card glass-card">
+                            <div class="price-card-header">
+                                <h4>Masaj Capilar</h4>
+                                <span class="price-duration">10 min</span>
+                            </div>
+                            <div class="price-tag">20 <span>lei</span></div>
+                        </div>
+                        <div class="price-card glass-card">
+                            <div class="price-card-header">
+                                <h4>Spălat pe Cap</h4>
+                                <span class="price-duration">10 min</span>
+                            </div>
+                            <div class="price-tag">10 <span>lei</span></div>
+                        </div>
+                    </div>
+                    <a href="https://bookr.ro/ro/b/young-house-barbershop" target="_blank" rel="noopener" class="btn btn-primary barber-book-btn" id="book-mario">
+                        <span>Programează la Mario</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+
+                <!-- Manolache Razvan -->
+                <div class="barber-panel" id="panel-razvan" data-barber="razvan">
+                    <div class="barber-info-header">
+                        <div class="barber-avatar">MR</div>
+                        <div>
+                            <h3 class="barber-name">Manolache Răzvan</h3>
+                            <span class="barber-role">Barber</span>
+                        </div>
+                    </div>
+                    <div class="services-price-grid">
+                        <div class="price-card glass-card">
+                            <div class="price-card-header">
+                                <h4>Tuns Barba</h4>
+                                <span class="price-duration">15 min</span>
+                            </div>
+                            <div class="price-tag">25 <span>lei</span></div>
+                        </div>
+                        <div class="price-card glass-card featured-price">
+                            <div class="price-badge">Best Deal</div>
+                            <div class="price-card-header">
+                                <h4>Best Deal</h4>
+                                <span class="price-duration">45 min</span>
+                            </div>
+                            <div class="price-tag">75 <span>lei</span></div>
+                        </div>
+                        <div class="price-card glass-card">
+                            <div class="price-card-header">
+                                <h4>Tuns Skin Fade</h4>
+                                <span class="price-duration">30 min</span>
+                            </div>
+                            <div class="price-tag">60 <span>lei</span></div>
+                        </div>
+                        <div class="price-card glass-card">
+                            <div class="price-card-header">
+                                <h4>Tuns Skin Fade cu Model</h4>
+                                <span class="price-duration">30 min</span>
+                            </div>
+                            <div class="price-tag">65 <span>lei</span></div>
+                        </div>
+                        <div class="price-card glass-card premium-price">
+                            <div class="price-badge">Premium</div>
+                            <div class="price-card-header">
+                                <h4>Ultimate Experience</h4>
+                                <span class="price-duration">Complet</span>
+                            </div>
+                            <div class="price-tag">80 <span>lei</span></div>
+                        </div>
+                        <div class="price-card glass-card">
+                            <div class="price-card-header">
+                                <h4>Full Head Shave</h4>
+                                <span class="price-duration">30 min</span>
+                            </div>
+                            <div class="price-tag">55 <span>lei</span></div>
+                        </div>
+                        <div class="price-card glass-card">
+                            <div class="price-card-header">
+                                <h4>Spălat pe Cap</h4>
+                                <span class="price-duration">10 min</span>
+                            </div>
+                            <div class="price-tag">10 <span>lei</span></div>
+                        </div>
+                    </div>
+                    <a href="https://bookr.ro/ro/b/young-house-barbershop" target="_blank" rel="noopener" class="btn btn-primary barber-book-btn" id="book-razvan">
+                        <span>Programează la Răzvan</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+
+                <!-- Cipri -->
+                <div class="barber-panel" id="panel-cipri" data-barber="cipri">
+                    <div class="barber-info-header">
+                        <div class="barber-avatar">C</div>
+                        <div>
+                            <h3 class="barber-name">Cipri</h3>
+                            <span class="barber-role">Barber</span>
+                        </div>
+                    </div>
+                    <div class="services-price-grid">
+                        <div class="price-card glass-card">
+                            <div class="price-card-header">
+                                <h4>Tuns Barba</h4>
+                                <span class="price-duration">15 min</span>
+                            </div>
+                            <div class="price-tag">30 <span>lei</span></div>
+                        </div>
+                        <div class="price-card glass-card featured-price">
+                            <div class="price-badge">Best Deal</div>
+                            <div class="price-card-header">
+                                <h4>Best Deal</h4>
+                                <span class="price-duration">45 min</span>
+                            </div>
+                            <p class="price-desc">Tuns Fade + Barbă + Styling</p>
+                            <div class="price-tag">65 <span>lei</span></div>
+                        </div>
+                        <div class="price-card glass-card">
+                            <div class="price-card-header">
+                                <h4>Tuns Skin Fade</h4>
+                                <span class="price-duration">30 min</span>
+                            </div>
+                            <div class="price-tag">50 <span>lei</span></div>
+                        </div>
+                        <div class="price-card glass-card">
+                            <div class="price-card-header">
+                                <h4>Full Head Shave</h4>
+                                <span class="price-duration">30 min</span>
+                            </div>
+                            <div class="price-tag">50 <span>lei</span></div>
+                        </div>
+                        <div class="price-card glass-card">
+                            <div class="price-card-header">
+                                <h4>Spălat pe Cap</h4>
+                                <span class="price-duration">10 min</span>
+                            </div>
+                            <div class="price-tag">10 <span>lei</span></div>
+                        </div>
+                    </div>
+                    <a href="https://bookr.ro/ro/b/young-house-barbershop" target="_blank" rel="noopener" class="btn btn-primary barber-book-btn" id="book-cipri">
+                        <span>Programează la Cipri</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section class="section schedule" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Program</span>
+                <h2 class="section-title">Suntem <span class="text-gradient">deschiși</span></h2>
+                <p class="section-desc">Zilnic de la 10:00 la 21:00, inclusiv duminica.</p>
+            </div>
+            <div class="schedule-card glass-card">
+                <div class="schedule-grid">
+                    <div class="schedule-day">
+                        <span class="day-name">Luni</span>
+                        <span class="day-line"></span>
+                        <span class="day-hours">10:00 – 21:00</span>
+                    </div>
+                    <div class="schedule-day">
+                        <span class="day-name">Marți</span>
+                        <span class="day-line"></span>
+                        <span class="day-hours">10:00 – 21:00</span>
+                    </div>
+                    <div class="schedule-day">
+                        <span class="day-name">Miercuri</span>
+                        <span class="day-line"></span>
+                        <span class="day-hours">10:00 – 21:00</span>
+                    </div>
+                    <div class="schedule-day">
+                        <span class="day-name">Joi</span>
+                        <span class="day-line"></span>
+                        <span class="day-hours">10:00 – 21:00</span>
+                    </div>
+                    <div class="schedule-day">
+                        <span class="day-name">Vineri</span>
+                        <span class="day-line"></span>
+                        <span class="day-hours">10:00 – 21:00</span>
+                    </div>
+                    <div class="schedule-day">
+                        <span class="day-name">Sâmbătă</span>
+                        <span class="day-line"></span>
+                        <span class="day-hours">10:00 – 21:00</span>
+                    </div>
+                    <div class="schedule-day">
+                        <span class="day-name">Duminică</span>
+                        <span class="day-line"></span>
+                        <span class="day-hours">10:00 – 21:00</span>
                     </div>
                 </div>
-                <div class="service-card glass-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-number">02</div>
-                    <div class="service-icon">🪒</div>
-                    <h3>Bărbierit</h3>
-                    <p>Bărbierit clasic cu prosop cald și produse premium pentru o piele perfectă.</p>
-                    <div class="service-price">
-                        <span class="price">de la 30 lei</span>
-                    </div>
-                </div>
-                <div class="service-card glass-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-number">03</div>
-                    <div class="service-icon">💈</div>
-                    <h3>Tuns + Barbă</h3>
-                    <p>Pachet complet de grooming — tuns și aranjat barbă pentru look-ul perfect.</p>
-                    <div class="service-price">
-                        <span class="price">de la 60 lei</span>
-                    </div>
-                </div>
-                <div class="service-card glass-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-number">04</div>
-                    <div class="service-icon">⚡</div>
-                    <h3>Design & Fade</h3>
-                    <p>Fade-uri precise și design-uri creative pentru cei care vor să iasă în evidență.</p>
-                    <div class="service-price">
-                        <span class="price">de la 50 lei</span>
-                    </div>
-                </div>
-                <div class="service-card glass-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-number">05</div>
-                    <div class="service-icon">👶</div>
-                    <h3>Tuns Copii</h3>
-                    <p>Tuns atent și prietenos pentru cei mici, într-o atmosferă relaxată.</p>
-                    <div class="service-price">
-                        <span class="price">de la 30 lei</span>
-                    </div>
-                </div>
-                <div class="service-card glass-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="service-number">06</div>
-                    <div class="service-icon">🧴</div>
-                    <h3>Tratament Păr</h3>
-                    <p>Tratament de întreținere și revitalizare cu produse profesionale.</p>
-                    <div class="service-price">
-                        <span class="price">de la 25 lei</span>
-                    </div>
+                <div class="schedule-cta">
+                    <a href="https://bookr.ro/ro/b/young-house-barbershop" target="_blank" rel="noopener" class="btn btn-primary" id="schedule-book-btn">
+                        <span>Programează-te Acum</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
                 </div>
             </div>
         </div>
@@ -224,22 +504,21 @@
                 <p class="section-desc">Fiecare tunsoare e o operă de artă. Privește și convinge-te singur.</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item glass-card">
-                    <div class="gallery-placeholder">
-                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                        <span>Fade Perfect</span>
-                    </div>
-                </div>
                 <div class="gallery-item glass-card gallery-wide">
                     <img src="images/interior.jpg" alt="Interior Young House Barbershop" class="gallery-img">
-                    <div class="gallery-placeholder has-image">
-                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    <div class="gallery-overlay">
                         <span>Atmosfera Young House</span>
                     </div>
                 </div>
                 <div class="gallery-item glass-card">
-                    <div class="gallery-placeholder">
-                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    <img src="images/gallery-work-1.jpg" alt="Lucrare Young House Barbershop" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <span>Fade Perfect</span>
+                    </div>
+                </div>
+                <div class="gallery-item glass-card">
+                    <img src="images/gallery-work-2.jpg" alt="Lucrare Young House Barbershop" class="gallery-img">
+                    <div class="gallery-overlay">
                         <span>Design Creativ</span>
                     </div>
                 </div>
@@ -276,14 +555,14 @@
             <div class="testimonials-track" id="testimonials-track">
                 <div class="testimonial-card glass-card">
                     <div class="testimonial-stars">★★★★★</div>
-                        <p class="review-text">"Servicii de nota 10! Tuns perfect, atenție la detalii și o atmosferă super relaxantă. Recomand cu încredere Young House."</p>
-                        <div class="review-author">
-                            <div class="author-avatar">AP</div>
-                            <div class="author-info">
-                                <h4>Andrei Popescu</h4>
-                                <span>Ghid Local Google</span>
-                            </div>
+                    <p class="testimonial-text">"Servicii de nota 10! Tuns perfect, atenție la detalii și o atmosferă super relaxantă. Recomand cu încredere Young House."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AP</div>
+                        <div>
+                            <strong>Andrei Popescu</strong>
+                            <span>Ghid Local Google</span>
                         </div>
+                    </div>
                 </div>
                 <div class="testimonial-card glass-card">
                     <div class="testimonial-stars">★★★★★</div>
@@ -298,14 +577,14 @@
                 </div>
                 <div class="testimonial-card glass-card">
                     <div class="testimonial-stars">★★★★★</div>
-                        <p class="review-text">"Sunt client fidel de ceva timp. Fade-ul iese perfect de fiecare dată. Locația e curată, au un design modern și băieții sunt super de treabă."</p>
-                        <div class="review-author">
-                            <div class="author-avatar">AI</div>
-                            <div class="author-info">
-                                <h4>Alexandru Ionescu</h4>
-                                <span>Ghid Local Google</span>
-                            </div>
+                    <p class="testimonial-text">"Sunt client fidel de ceva timp. Fade-ul iese perfect de fiecare dată. Locația e curată, au un design modern și băieții sunt super de treabă."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AI</div>
+                        <div>
+                            <strong>Alexandru Ionescu</strong>
+                            <span>Ghid Local Google</span>
                         </div>
+                    </div>
                 </div>
                 <div class="testimonial-card glass-card">
                     <div class="testimonial-stars">★★★★★</div>
@@ -328,7 +607,7 @@
             <div class="cta-card glass-card">
                 <h2 class="cta-title">Pregătit pentru o <span class="text-gradient">transformare?</span></h2>
                 <p class="cta-text">Nu mai aștepta. Programează-te acum și descoperă experiența Young House Barbershop.</p>
-                <a href="#contact" class="btn btn-primary btn-lg">
+                <a href="https://bookr.ro/ro/b/young-house-barbershop" target="_blank" rel="noopener" class="btn btn-primary btn-lg" id="cta-book-btn">
                     <span>Programează-te Acum</span>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
@@ -361,7 +640,7 @@
                         </div>
                         <div>
                             <h4>Program</h4>
-                            <p>Luni – Vineri: 09:00 – 20:00<br>Sâmbătă: 09:00 – 18:00<br>Duminică: Închis</p>
+                            <p>Luni – Duminică: 10:00 – 21:00</p>
                         </div>
                     </div>
                     <div class="contact-item glass-card">
@@ -370,7 +649,7 @@
                         </div>
                         <div>
                             <h4>Programări</h4>
-                            <p>Prin Bookr.ro sau<br>direct la salon</p>
+                            <p><a href="https://bookr.ro/ro/b/young-house-barbershop" target="_blank" rel="noopener" class="booking-link">Bookr.ro</a> sau<br>direct la salon</p>
                         </div>
                     </div>
                 </div>
@@ -416,7 +695,7 @@
                     <h4>Navigare</h4>
                     <a href="#hero">Acasă</a>
                     <a href="#about">Despre Noi</a>
-                    <a href="#services">Servicii</a>
+                    <a href="#barbers">Echipa</a>
                     <a href="#gallery">Galerie</a>
                     <a href="#contact">Contact</a>
                 </div>
@@ -426,7 +705,7 @@
                         <a href="#" class="social-link" aria-label="Facebook">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
                         </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
+                        <a href="https://www.instagram.com/younghouse_barbershop/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
                         </a>
                         <a href="#" class="social-link" aria-label="TikTok">

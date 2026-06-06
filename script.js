@@ -2,6 +2,7 @@
    YOUNG HOUSE BARBERSHOP
    Interactive JavaScript
    Particles + Animations + Scroll
+   White/Black/Red Theme
    =================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -29,29 +30,26 @@ document.addEventListener('DOMContentLoaded', () => {
         mouse.y = e.clientY;
     });
 
-    // Barber tool shapes as path drawing functions
+    // Barber tool shapes - now in red/white theme
     const drawScissors = (ctx, x, y, size, rotation, alpha) => {
         ctx.save();
         ctx.translate(x, y);
         ctx.rotate(rotation);
         ctx.globalAlpha = alpha;
-        ctx.strokeStyle = `rgba(147, 51, 234, ${alpha})`;
+        ctx.strokeStyle = `rgba(230, 57, 70, ${alpha})`;
         ctx.lineWidth = 1.2;
         ctx.lineCap = 'round';
         
-        // Left blade
         ctx.beginPath();
         ctx.moveTo(0, 0);
         ctx.lineTo(-size * 0.8, -size * 0.6);
         ctx.stroke();
         
-        // Right blade
         ctx.beginPath();
         ctx.moveTo(0, 0);
         ctx.lineTo(-size * 0.8, size * 0.6);
         ctx.stroke();
         
-        // Handles
         ctx.beginPath();
         ctx.arc(size * 0.45, -size * 0.25, size * 0.22, 0, Math.PI * 2);
         ctx.stroke();
@@ -60,10 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.arc(size * 0.45, size * 0.25, size * 0.22, 0, Math.PI * 2);
         ctx.stroke();
         
-        // Center pivot
         ctx.beginPath();
         ctx.arc(0, 0, size * 0.06, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(179, 128, 255, ${alpha})`;
+        ctx.fillStyle = `rgba(255, 107, 107, ${alpha})`;
         ctx.fill();
         
         ctx.restore();
@@ -74,17 +71,15 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.translate(x, y);
         ctx.rotate(rotation);
         ctx.globalAlpha = alpha;
-        ctx.strokeStyle = `rgba(124, 58, 237, ${alpha})`;
+        ctx.strokeStyle = `rgba(255, 255, 255, ${alpha * 0.5})`;
         ctx.lineWidth = 1;
         ctx.lineCap = 'round';
         
-        // Spine
         ctx.beginPath();
         ctx.moveTo(-size * 0.5, 0);
         ctx.lineTo(size * 0.5, 0);
         ctx.stroke();
         
-        // Teeth
         const teethCount = 7;
         const spacing = size / teethCount;
         for (let i = 0; i < teethCount; i++) {
@@ -103,13 +98,12 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.translate(x, y);
         ctx.rotate(rotation);
         ctx.globalAlpha = alpha;
-        ctx.strokeStyle = `rgba(179, 128, 255, ${alpha})`;
+        ctx.strokeStyle = `rgba(255, 255, 255, ${alpha * 0.4})`;
         ctx.lineWidth = 1.2;
         ctx.lineCap = 'round';
         
-        // Handle
-        ctx.beginPath();
         const hx = -size * 0.15, hy = -size * 0.1, hw = size * 0.3, hh = size * 0.7;
+        ctx.beginPath();
         ctx.moveTo(hx + 3, hy);
         ctx.lineTo(hx + hw - 3, hy);
         ctx.quadraticCurveTo(hx + hw, hy, hx + hw, hy + 3);
@@ -122,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.closePath();
         ctx.stroke();
         
-        // Blade
+        ctx.strokeStyle = `rgba(230, 57, 70, ${alpha * 0.6})`;
         ctx.beginPath();
         ctx.moveTo(-size * 0.3, -size * 0.1);
         ctx.lineTo(size * 0.3, -size * 0.1);
@@ -142,10 +136,9 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.lineWidth = 1;
         ctx.lineCap = 'round';
         
-        // Pole
-        ctx.strokeStyle = `rgba(147, 51, 234, ${alpha})`;
-        ctx.beginPath();
+        ctx.strokeStyle = `rgba(255, 255, 255, ${alpha * 0.4})`;
         const px = -size * 0.12, py = -size * 0.5, pw = size * 0.24, ph = size, pr = 4;
+        ctx.beginPath();
         ctx.moveTo(px + pr, py);
         ctx.lineTo(px + pw - pr, py);
         ctx.quadraticCurveTo(px + pw, py, px + pw, py + pr);
@@ -158,8 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.closePath();
         ctx.stroke();
         
-        // Stripes
-        ctx.strokeStyle = `rgba(179, 128, 255, ${alpha * 0.6})`;
+        ctx.strokeStyle = `rgba(230, 57, 70, ${alpha * 0.5})`;
         for (let i = 0; i < 4; i++) {
             const sy = -size * 0.35 + i * size * 0.22;
             ctx.beginPath();
@@ -177,11 +169,10 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.rotate(rotation);
         ctx.globalAlpha = alpha;
         
-        // Simple glowing dot
         const gradient = ctx.createRadialGradient(0, 0, 0, 0, 0, size * 0.3);
-        gradient.addColorStop(0, `rgba(179, 128, 255, ${alpha})`);
-        gradient.addColorStop(0.5, `rgba(147, 51, 234, ${alpha * 0.5})`);
-        gradient.addColorStop(1, `rgba(124, 58, 237, 0)`);
+        gradient.addColorStop(0, `rgba(230, 57, 70, ${alpha})`);
+        gradient.addColorStop(0.5, `rgba(230, 57, 70, ${alpha * 0.4})`);
+        gradient.addColorStop(1, `rgba(230, 57, 70, 0)`);
         
         ctx.beginPath();
         ctx.arc(0, 0, size * 0.3, 0, Math.PI * 2);
@@ -196,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.translate(x, y);
         ctx.rotate(rotation);
         ctx.globalAlpha = alpha;
-        ctx.strokeStyle = `rgba(245, 197, 66, ${alpha * 0.7})`;
+        ctx.strokeStyle = `rgba(255, 255, 255, ${alpha * 0.5})`;
         ctx.lineWidth = 1;
         
         const s = size * 0.2;
@@ -229,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
             this.speedY = (Math.random() - 0.5) * 0.3 - 0.15;
             this.rotation = Math.random() * Math.PI * 2;
             this.rotationSpeed = (Math.random() - 0.5) * 0.008;
-            this.alpha = Math.random() * 0.2 + 0.05;
+            this.alpha = Math.random() * 0.18 + 0.04;
             this.targetAlpha = this.alpha;
             this.drawFn = shapes[Math.floor(Math.random() * shapes.length)];
             this.pulseSpeed = Math.random() * 0.02 + 0.005;
@@ -242,11 +233,9 @@ document.addEventListener('DOMContentLoaded', () => {
             this.y += this.speedY;
             this.rotation += this.rotationSpeed;
             
-            // Pulse alpha
-            this.targetAlpha = (Math.sin(time * this.pulseSpeed + this.pulsePhase) * 0.5 + 0.5) * 0.2 + 0.03;
+            this.targetAlpha = (Math.sin(time * this.pulseSpeed + this.pulsePhase) * 0.5 + 0.5) * 0.18 + 0.03;
             this.alpha += (this.targetAlpha - this.alpha) * 0.05;
 
-            // Mouse interaction - particles gently pushed away
             const dx = this.x - mouse.x;
             const dy = this.y - mouse.y;
             const dist = Math.sqrt(dx * dx + dy * dy);
@@ -254,10 +243,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const force = (120 - dist) / 120;
                 this.x += (dx / dist) * force * 1.5;
                 this.y += (dy / dist) * force * 1.5;
-                this.alpha = Math.min(this.alpha + 0.05, 0.4);
+                this.alpha = Math.min(this.alpha + 0.05, 0.35);
             }
 
-            // Wrap around
             if (this.x < -50) this.x = canvas.width + 50;
             if (this.x > canvas.width + 50) this.x = -50;
             if (this.y < -50) this.y = canvas.height + 50;
@@ -269,12 +257,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Determine particle count based on screen size
     function getParticleCount() {
         const area = window.innerWidth * window.innerHeight;
-        if (area < 400000) return 18;  // small mobile
-        if (area < 800000) return 28;  // mobile/tablet
-        return 45; // desktop
+        if (area < 400000) return 18;
+        if (area < 800000) return 28;
+        return 45;
     }
 
     function initParticles() {
@@ -302,13 +289,35 @@ document.addEventListener('DOMContentLoaded', () => {
     initParticles();
     animateParticles();
 
-    // Reinit on resize
     let resizeTimeout;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
             initParticles();
         }, 300);
+    });
+
+
+    // ===================================
+    // BARBER TABS
+    // ===================================
+    const barberTabs = document.querySelectorAll('.barber-tab');
+    const barberPanels = document.querySelectorAll('.barber-panel');
+
+    barberTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const barber = tab.dataset.barber;
+
+            barberTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            barberPanels.forEach(panel => {
+                panel.classList.remove('active');
+                if (panel.dataset.barber === barber) {
+                    panel.classList.add('active');
+                }
+            });
+        });
     });
 
 
@@ -320,7 +329,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.getElementById('nav-links');
     const allNavLinks = document.querySelectorAll('.nav-link');
 
-    // Scroll effect
     let lastScroll = 0;
     window.addEventListener('scroll', () => {
         const scrollY = window.scrollY;
@@ -334,14 +342,12 @@ document.addEventListener('DOMContentLoaded', () => {
         lastScroll = scrollY;
     });
 
-    // Mobile toggle
     navToggle.addEventListener('click', () => {
         navToggle.classList.toggle('active');
         navLinks.classList.toggle('active');
         document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
     });
 
-    // Close mobile nav on link click
     allNavLinks.forEach(link => {
         link.addEventListener('click', () => {
             navToggle.classList.remove('active');
@@ -378,23 +384,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // SCROLL REVEAL ANIMATIONS
     // ===================================
     function addRevealClasses() {
-        // Section headers
         document.querySelectorAll('.section-header').forEach(el => {
             el.classList.add('reveal');
         });
 
-        // Card grids
-        document.querySelectorAll('.about-grid, .services-grid, .testimonials-track, .gallery-grid').forEach(el => {
+        document.querySelectorAll('.about-grid, .services-price-grid, .testimonials-track, .gallery-grid').forEach(el => {
             el.classList.add('reveal-stagger');
         });
 
-        // Contact
         document.querySelectorAll('.contact-info, .contact-map').forEach(el => {
             el.classList.add('reveal');
         });
 
-        // CTA
-        document.querySelectorAll('.cta-card').forEach(el => {
+        document.querySelectorAll('.cta-card, .schedule-card, .barber-tabs, .barber-info-header').forEach(el => {
             el.classList.add('reveal');
         });
     }
@@ -436,7 +438,6 @@ document.addEventListener('DOMContentLoaded', () => {
             function updateCounter() {
                 const elapsed = Date.now() - startTime;
                 const progress = Math.min(elapsed / duration, 1);
-                // Ease out cubic
                 const eased = 1 - Math.pow(1 - progress, 3);
                 const current = target * eased;
                 
@@ -461,7 +462,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Trigger counter when hero stats come into view
     const statsObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -476,7 +476,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // ===================================
-    // SMOOTH ANCHOR SCROLLING (fallback)
+    // SMOOTH ANCHOR SCROLLING
     // ===================================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -515,7 +515,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // TILT EFFECT ON CARDS (Desktop)
     // ===================================
     if (window.innerWidth > 900) {
-        document.querySelectorAll('.service-card, .about-card').forEach(card => {
+        document.querySelectorAll('.about-card, .price-card').forEach(card => {
             card.addEventListener('mousemove', (e) => {
                 const rect = card.getBoundingClientRect();
                 const x = (e.clientX - rect.left) / rect.width;
@@ -547,30 +547,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // ===================================
-    // PARALLAX SCROLL ON ORBS
-    // ===================================
-    const orbs = document.querySelectorAll('.orb');
-    
-    function parallaxOrbs() {
-        const scrollY = window.scrollY;
-        orbs.forEach((orb, i) => {
-            const speed = [0.03, 0.05, 0.02, 0.04][i];
-            orb.style.transform = `translateY(${scrollY * speed}px)`;
-        });
-    }
-
-    // Use passive listener for better performance
-    window.addEventListener('scroll', parallaxOrbs, { passive: true });
-
-
-    // ===================================
     // PRELOADER REMOVAL
     // ===================================
     window.addEventListener('load', () => {
         document.body.classList.add('loaded');
     });
 
-    // Fallback: ensure body is interactive
     setTimeout(() => {
         document.body.classList.add('loaded');
     }, 3000);
